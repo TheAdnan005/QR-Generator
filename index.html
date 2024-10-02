@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container" id="qrContainer">
+        <h1>QR Generator</h1>
+        <input id="urlInput" type="text" placeholder="Enter Your URL ">
+        <button onclick="generateQR()">Generate QR</button>
+        <h2 id="qrHeading" style="display: none;">Generated QR </h2>
+
+        <canvas id="qrCanvas" style="display: none;"></canvas>
+    </div>
+
+    <!-- Include the QRious library via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script>
+        function generateQR() {
+            const url = document.getElementById('urlInput').value;
+            const qrCanvas = document.getElementById('qrCanvas');
+            const qrContainer = document.getElementById('qrContainer');
+
+            // Check if the input is empty
+            if (!url) {
+                alert('Please enter a valid URL.');
+                return;
+            }
+
+            // Create a new QRious instance and generate the QR code
+            var qr = new QRious({
+                element: qrCanvas,
+                value: url, // The URL to encode
+                size: 170, // Size of the QR code
+                background: '#ffffff', // Background color
+                foreground: '#000000'  // QR code color
+            });
+
+            // Show the QR canvas by changing the container height and displaying the canvas
+            qrCanvas.style.display = 'block';
+            qrContainer.style.height = 'auto';
+            qrContainer.style.gap = '20px';
+            qrContainer.style.justifyContent = 'flex-start';
+            qrCanvas.style.marginTop = '10px';
+            qrHeading.style.display = 'block';
+            qrHeading.marginTop = '15px';
+
+        }
+    </script>
+</body>
+
+</html>

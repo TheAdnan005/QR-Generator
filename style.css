@@ -1,0 +1,103 @@
+/* Global Styles */
+* {
+    margin: 0px;
+    padding: 0px;}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, #920330, #2e0437);
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 60px;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    transition: all 0.5s ease; /* Smooth transition */
+    height: 320px; /* Initial height */
+    overflow: hidden;
+}
+
+/* Input Styles */
+input {
+    background: rgba(58, 58, 58, 0.8);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    height: 30px;
+    width: 230px;
+    font-size: 16px;
+    color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #fac7c7;
+    box-shadow: 0 0 8px rgba(247, 169, 169, 0.8);
+}
+
+/* Placeholder */
+::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
+
+/* Button Styles */
+button {
+    background: #bd0435;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background: #8f0005;
+    box-shadow: 0 4px 15px rgba(245, 62, 62, 0.4);
+}
+
+/* QR Canvas */
+#qrCanvas {
+    display: none; /* Initially hidden */
+    margin-top: 20px;
+}
+
+/* Button Active State */
+button:active {
+    background: #05a944;
+    box-shadow: none;
+}
+
+/* Make it responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 40px;
+    }
+
+    input, button {
+        width: 100%;
+    }
+}
